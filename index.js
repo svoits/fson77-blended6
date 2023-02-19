@@ -16,7 +16,6 @@
 //   alert("Не знаєте? ECMAScript!");
 // }
 
-
 /**
  *? Напишіть програму, яка отримає від користувача
  *? число (кількість хвилин) та виведе в консоль
@@ -26,7 +25,6 @@
  */
 
 // const numberFromUser = prompt("Введіть число");
-
 
 //  function minutesToHour(number){
 //   let hours = String(Math.floor(number / 60)).padStart(2,"0");
@@ -57,7 +55,6 @@
 //  }
 //  numbers(1,12)
 
-
 /**
  *? Напишіть цикл, який пропонує ввести
  *? число більше 100 через prompt.
@@ -71,11 +68,8 @@
 // let userNamber = prompt(`ВВедіти число більше 100!`);
 
 // while (userNamber < 100 && userNamber !== null) {
-//     userNamber = prompt(`ВВедіти число більше 100!`); 
+//     userNamber = prompt(`ВВедіти число більше 100!`);
 // }
-
-
-
 
 /**
  *?  Записать массив, const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
@@ -84,10 +78,33 @@
  *? перевести его в строку разделенную пробелами
  */
 
+//  const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
 
- const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
+//  const newArray = arr.slice().reverse()
+//  newArray.splice(arr.indexOf('foo'), 1)
 
- const newArray = arr.slice().reverse()
- newArray.splice(arr.indexOf('foo'), 1)
+//  console.log(newArray.join(" "))
 
- console.log(newArray.join(" "))
+/**
+ *? При завантаженні сторінки користувачеві пропонується
+ *? в prompt ввести число. Введення додається до значення
+ *? змінної total.
+ *? Операція введення числа триває до того часу,
+ *? поки користувач не натисне кнопку Cancel у prompt.
+ *? Після того як користувач припинив введення, натиснувши на
+ *? кнопку Cancel, показати alert з рядком "Загальна сума введених чисел дорівнює [число]."
+ 
+ *! Робити перевірку, що користувач ввів саме число,
+ *! а не довільний набір символів не потрібно.
+ */
+
+let total = 0;
+let userNumber = prompt("Введіть число");
+
+while (userNumber !== null) {
+  total += Number(userNumber);
+  console.log(userNumber);
+  userNumber = prompt("Введіть число");
+}
+
+alert(`Загальна сума введених чисел дорівнює ${total}.`);

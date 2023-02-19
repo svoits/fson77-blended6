@@ -68,8 +68,26 @@
  *? Скасування в prompt
  */
 
-let userNamber = prompt(`ВВедіти число більше 100!`);
+// let userNamber = prompt(`ВВедіти число більше 100!`);
 
-while (userNamber < 100 && userNamber !== null) {
-    userNamber = prompt(`ВВедіти число більше 100!`); 
-}
+// while (userNamber < 100 && userNamber !== null) {
+//     userNamber = prompt(`ВВедіти число більше 100!`); 
+// }
+
+
+
+
+/**
+ *?  Записать массив, const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
+ *? развернуть массив,
+ *? вырезать foo,
+ *? перевести его в строку разделенную пробелами
+ */
+
+
+ const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
+
+ const newArray = arr.slice().reverse()
+ newArray.splice(arr.indexOf('foo'), 1)
+
+ console.log(newArray.join(" "))

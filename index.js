@@ -25,16 +25,34 @@
  *? 70 === 01:10
  */
 
-const numberFromUser = prompt("Введіть число");
+// const numberFromUser = prompt("Введіть число");
 
 
- function minutesToHour(number){
-  let hours = String(Math.floor(number / 60)).padStart(2,"0");
+//  function minutesToHour(number){
+//   let hours = String(Math.floor(number / 60)).padStart(2,"0");
 
-  let minutes = String(number % 60).padStart(2,"0");
-  console.log(`${hours}:${minutes}`);
-  return `${hours}:${minutes}`;
+//   let minutes = String(number % 60).padStart(2,"0");
+//   console.log(`${hours}:${minutes}`);
+//   return `${hours}:${minutes}`;
+//  }
+
+//  minutesToHour(numberFromUser);
+
+ /**
+ *? Напишіть цикл, який виводить у консоль
+ *? числа від max до min за спаданням.
+ *? Виведіть у консоль усі парні числа від min до max
+ */
+
+ function numbers(min, max){
+    for(let i = max; i >= min; i -= 1){
+        console.log(i);
+    }
+
+    for(let i = min; i <= max; i += 1){
+        if (i % 2 === 0){
+            console.log(i);
+        }
+    }
  }
-
- minutesToHour(numberFromUser);
- 
+ numbers(1,12)

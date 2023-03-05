@@ -119,19 +119,35 @@
  *? ключ: значення використовуючи Object.keys() і for...of
  */
 
-const user = {
-  name: "John",
-  age: 20,
-  hobby: "tennis",
-  premium: true,
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tennis",
+//   premium: true,
+// };
+
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+
+// let userKeys = Object.keys(user);
+
+// for (let key of userKeys) {
+//   console.log(`${key} : ${user[key]}`);
+// }
+
+/**
+ *? У нас есть объект, в котором хранятся зарплаты
+ *? нашей команды
+ *? Напишите код для суммирования всех зарплат и
+ *? сохраните его результат в переменной sum.
+ *? Если объект salaries пуст, то результат должен быть 0
+ */
+
+ const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
 };
-
-user.mood = "happy";
-user.hobby = "skydiving";
-user.premium = false;
-
-let userKeys = Object.keys(user);
-
-for (let key of userKeys) {
-  console.log(`${key} : ${user[key]}`);
-}
+const valuesSalaries = Object.values(salaries).reduce((sum, alt) => sum += alt, 0);
+console.log(valuesSalaries);

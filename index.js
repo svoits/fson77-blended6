@@ -217,32 +217,58 @@
 *? Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
 
  */
-const tweets = [
-  { id: "000", likes: 5, tags: ["js", "nodejs"] },
-  { id: "001", likes: 2, tags: ["html", "css"] },
-  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-  { id: "003", likes: 8, tags: ["css", "react"] },
-  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-];
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
 
-const result = tweets
-  .flatMap((tweet) => tweet.tags)
-  .reduce((acc, tweet) => {
-    //   варіант 1
+// const result = tweets
+//   .flatMap((tweet) => tweet.tags)
+//   .reduce((acc, tweet) => {
+//     //   варіант 1
 
-    // if (acc[tweet]) {
-    //   acc[tweet] += 1;
-    //   return acc;
-    // } else {
-    //   acc[tweet] = 1;
-    //   return acc;
-    // }
+//     // if (acc[tweet]) {
+//     //   acc[tweet] += 1;
+//     //   return acc;
+//     // } else {
+//     //   acc[tweet] = 1;
+//     //   return acc;
+//     // }
 
-    //   варіант2
-    return {
-      ...acc,
-      [tweet]: acc[tweet] ? acc[tweet] + 1 : 1,
-    };
-  }, {});
+//     //   варіант2
+//     return {
+//       ...acc,
+//       [tweet]: acc[tweet] ? acc[tweet] + 1 : 1,
+//     };
+//   }, {});
 
-console.log(result);
+// console.log(result);
+
+/**
+ *? З об'єкту concerts потрібно отримати масив
+ *? в якому будуть лише імена міст.
+ *? З масиву потрібно прибрати міста, в яких концерт уже пройшов і
+ *? відсортувати їх у хронологічному порядку.
+ *? Результат вивести у консоль.
+ *? Очікуваний результат ["Умань", "Харків", "Одеса"]
+ */
+const concerts = {
+  Київ: new Date("2020-04-01"),
+  Умань: new Date("2023-07-02"),
+  Вінниця: new Date("2020-04-21"),
+  Одеса: new Date("2023-07-15"),
+  Хмельницький: new Date("2020-04-18"),
+  Харків: new Date("2023-07-10"),
+};
+
+console.table(concerts);
+
+const cityNames = Object.keys(concerts);
+
+const filteredCities = cityNames
+  .filter((city) => concerts[city] > Date.now())
+  .sort((a, b) => concerts[a] - concerts[b]);
+console.log(filteredCities);

@@ -302,6 +302,9 @@ const result = [...arr].sort(({ name: a }, { name: b }) => a.localeCompare(b));
 console.log(result);
 
 // - Отсортировать ученых по количеству прожитых лет.
+
+const years = [...arr].sort((a, b) => (a.dead - a.born) - (b.dead - b.born));
+console.log(years);
 // - Удалить из массива ученых, родившихся в 15, 16 или 17 веках.
 // - Найти ученого, который родился позже всех.
 // - Найти год рождения Albert Einstein.

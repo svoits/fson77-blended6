@@ -292,20 +292,50 @@ const arr = [
 ];
 // - Получить массив ученых, родившихся в 19 веке.
 
-const result = arr.filter(person => person.born > 1800 && person.born <= 1900);
-console.log(result);
+// const result = arr.filter(person => person.born > 1800 && person.born <= 1900);
+// console.log(result);
 
-const years = arr.reduce((sum, person) => sum + (person.dead - person.born) ,0);
-console.log(years);
+// const years = arr.reduce((sum, person) => sum + (person.dead - person.born) ,0);
+// console.log(years);
 
 
-// - Отсортировать ученых по алфавиту.
+// // - Отсортировать ученых по алфавиту.
+//  const alphabet = [...arr].sort(({name:a}, {name:b})=> a.localeCompare(b));
+//  console.log(alphabet);
+
 // - Отсортировать ученых по количеству прожитых лет.
+ const lifetime = [...arr].sort((a, b) => (a.dead - a.born) - (b.dead - b.born));
+ console.log(lifetime);
+
 // - Удалить из массива ученых, родившихся в 15, 16 или 17 веках.
+const ancientAndNew = arr.filter(person =>  person.born > 1700);
+console.log(ancientAndNew);
+
 // - Найти ученого, который родился позже всех.
+const theLatestSc = [...arr].sort((a,b) => b.born - a.born)[0];
+console.log(theLatestSc);
+
 // - Найти год рождения Albert Einstein.
+const einsteinBorn = arr
+.find(person => person.name === "Albert" && person.surname === "Einstein" 
+? person : "Немає такого вченого").born;
+console.log(einsteinBorn);
 // - Найти ученых, фамилия которых начинается на букву "С".
+const scSurnameStartC = arr.filter(person => person.surname.startsWith('C'));
+console.log(scSurnameStartC);
 // - Удалить из массива всех ученых, имя которых начинается на букву "A".
+
+const deleteSc = arr.filter(person => !person.name.startsWith('A'));
+console.log(deleteSc);
 // - Найти ученого, который прожил больше всех и ученого, который меньше.
+const longerShorter = [lifetime[lifetime.length - 1], lifetime[0]];
+console.log(longerShorter);
 // - Найти ученых, у которых совпадают первые буквы имени и фамилии.
+const namSunamChar = arr.filter(person => /^(\w{2})/
+.exec(person.name)[1] === /^(\w{2})/
+.exec(person.surname)[1]);
+
+console.log(namSunamChar);
 // - Узнать, все ли ученые работали в 19 веке.
+const working = arr.every(person => person.born+18 > 1800 && person.born+18 <= 1900);
+console.log(working);

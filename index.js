@@ -333,7 +333,6 @@
 // const user1 = new User("John", 32, 12);
 // console.log(user1);
 
-
 //TODO:=============================================
 //Напиши функцію конструктор Storage який створює об'єкти
 //Для управління складом товарів.
@@ -344,27 +343,66 @@
 //addItems(item) - отримує новий товар та додає його до поточних
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
-const Storage = function (array) {
-  this.items = array;
+// const Storage = function (array) {
+//   this.items = array;
 
+//   this.addItems = function (item) {
+//     this.items.push(item);
+//   }
+//   this.removeItem = function(item) {
+//     const ididx = this.items.indexOf(item);
+//     if (ididx !== -1) {
+//       this.items.splice(ididx, 1);
+//     }
+//   }
+// }
+// Storage.prototype.getItem = function (){
+//   return this.items;
+// }
 
-  this.addItems = function (item) {
-    this.items.push(item);
+// const exempl = new Storage([1, 8, 12]);
+// console.log(exempl);
+// console.log(exempl.getItems());
+// console.log(exempl.addItems(8));
+// console.log(exempl.getItems())
+// console.log(exempl.removeItem(12));
+
+//TODO:=============================================
+//Напиши клас Client який створює об'єкт
+//з ​​властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
   }
-  this.removeItem = function(item) {
-    const ididx = this.items.indexOf(item);
-    if (ididx !== -1) {
-      this.items.splice(ididx, 1);
-    }
+
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
   }
 }
-Storage.prototype.getItem = function (){
-  return this.items;
-}
 
-const exempl = new Storage([1, 8, 12]);
-console.log(exempl);
-console.log(exempl.getItems());
-console.log(exempl.addItems(8));
-console.log(exempl.getItems())
-console.log(exempl.removeItem(12));
+const newClient = new Client("qwerty", "mail@mail.com");
+
+console.log(newClient.login);
+console.log((newClient.login = "newlogin"));
+
+console.log(newClient.email);
+console.log((newClient.email = "newemail@mail.com"));

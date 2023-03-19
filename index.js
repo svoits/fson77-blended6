@@ -273,21 +273,21 @@
 //   .sort((a, b) => concerts[a] - concerts[b]);
 // console.log(filteredCities);
 
-const arr = [
-  { name: "Albert", surname: "Einstein", born: 1879, dead: 1955, id: 1 },
-  { name: "Isaac", surname: "Newton", born: 1643, dead: 1727, id: 2 },
-  { name: "Galileo", surname: "Galilei", born: 1564, dead: 1642, id: 3 },
-  { name: "Marie", surname: "Curie", born: 1867, dead: 1934, id: 4 },
-  { name: "Pierre", surname: "Curie", born: 1859, dead: 1906, id: 5 },
-  { name: "Johannes", surname: "Kepler", born: 1571, dead: 1630, id: 6 },
-  { name: "Nicolaus", surname: "Copernicus", born: 1473, dead: 1543, id: 7 },
-  { name: "Max", surname: "Planck", born: 1858, dead: 1947, id: 8 },
-  { name: "Katherine", surname: "Blodgett", born: 1898, dead: 1979, id: 9 },
-  { name: "Ada", surname: "Lovelace", born: 1815, dead: 1852, id: 10 },
-  { name: "Sarah E.", surname: "Goode", born: 1855, dead: 1905, id: 11 },
-  { name: "Lise", surname: "Meitner", born: 1878, dead: 1968, id: 12 },
-  { name: "Hanna", surname: "Hammarström", born: 1829, dead: 1909, id: 13 },
-];
+// const arr = [
+//   { name: "Albert", surname: "Einstein", born: 1879, dead: 1955, id: 1 },
+//   { name: "Isaac", surname: "Newton", born: 1643, dead: 1727, id: 2 },
+//   { name: "Galileo", surname: "Galilei", born: 1564, dead: 1642, id: 3 },
+//   { name: "Marie", surname: "Curie", born: 1867, dead: 1934, id: 4 },
+//   { name: "Pierre", surname: "Curie", born: 1859, dead: 1906, id: 5 },
+//   { name: "Johannes", surname: "Kepler", born: 1571, dead: 1630, id: 6 },
+//   { name: "Nicolaus", surname: "Copernicus", born: 1473, dead: 1543, id: 7 },
+//   { name: "Max", surname: "Planck", born: 1858, dead: 1947, id: 8 },
+//   { name: "Katherine", surname: "Blodgett", born: 1898, dead: 1979, id: 9 },
+//   { name: "Ada", surname: "Lovelace", born: 1815, dead: 1852, id: 10 },
+//   { name: "Sarah E.", surname: "Goode", born: 1855, dead: 1905, id: 11 },
+//   { name: "Lise", surname: "Meitner", born: 1878, dead: 1968, id: 12 },
+//   { name: "Hanna", surname: "Hammarström", born: 1829, dead: 1909, id: 13 },
+// ];
 // - Получить массив ученых, родившихся в 19 веке.
 
 // const result = arr.filter(person => person.born > 1800 && person.born <= 1900);
@@ -298,13 +298,13 @@ const arr = [
 
 // - Отсортировать ученых по алфавиту.
 
-const result = [...arr].sort(({ name: a }, { name: b }) => a.localeCompare(b));
-console.log(result);
+// const result = [...arr].sort(({ name: a }, { name: b }) => a.localeCompare(b));
+// console.log(result);
 
 // - Отсортировать ученых по количеству прожитых лет.
 
-const years = [...arr].sort((a, b) => (a.dead - a.born) - (b.dead - b.born));
-console.log(years);
+// const years = [...arr].sort((a, b) => (a.dead - a.born) - (b.dead - b.born));
+// console.log(years);
 // - Удалить из массива ученых, родившихся в 15, 16 или 17 веках.
 // - Найти ученого, который родился позже всех.
 // - Найти год рождения Albert Einstein.
@@ -313,3 +313,22 @@ console.log(years);
 // - Найти ученого, который прожил больше всех и ученого, который меньше.
 // - Найти ученых, у которых совпадают первые буквы имени и фамилии.
 // - Узнать, все ли ученые работали в 19 веке.
+
+// ************
+// LESSON 3
+// ************
+
+// Напишіть функцію конструктор  User, у якої є три параметри userName, age, numbersOfPost і метод getInfo, який повертає рядок `Користувачеві ${this.username} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`
+
+function User(userName, age, numbersOfPost) {
+  this.userName = userName;
+  this.age = age;
+  this.numbersOfPost = numbersOfPost;
+
+  this.getInfo = function () {
+    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+  };
+}
+
+const user1 = new User("John", 32, 12);
+console.log(user1);

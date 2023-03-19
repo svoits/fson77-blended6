@@ -320,15 +320,51 @@
 
 // Напишіть функцію конструктор  User, у якої є три параметри userName, age, numbersOfPost і метод getInfo, який повертає рядок `Користувачеві ${this.username} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`
 
-function User(userName, age, numbersOfPost) {
-  this.userName = userName;
-  this.age = age;
-  this.numbersOfPost = numbersOfPost;
+// function User(userName, age, numbersOfPost) {
+//   this.userName = userName;
+//   this.age = age;
+//   this.numbersOfPost = numbersOfPost;
 
-  this.getInfo = function () {
-    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
-  };
+//   this.getInfo = function () {
+//     return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+//   };
+// }
+
+// const user1 = new User("John", 32, 12);
+// console.log(user1);
+
+
+//TODO:=============================================
+//Напиши функцію конструктор Storage який створює об'єкти
+//Для управління складом товарів.
+//При виклику отримуватиме один агрумент - початковий масив товарів,
+//і записувати їх у властивість items.
+//Додай методи класу:
+//getItems() - повертайте масив товарів
+//addItems(item) - отримує новий товар та додає його до поточних
+//removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+
+const Storage = function (array) {
+  this.items = array;
+
+
+  this.addItems = function (item) {
+    this.items.push(item);
+  }
+  this.removeItem = function(item) {
+    const ididx = this.items.indexOf(item);
+    if (ididx !== -1) {
+      this.items.splice(ididx, 1);
+    }
+  }
+}
+Storage.prototype.getItem = function (){
+  return this.items;
 }
 
-const user1 = new User("John", 32, 12);
-console.log(user1);
+const exempl = new Storage([1, 8, 12]);
+console.log(exempl);
+console.log(exempl.getItems());
+console.log(exempl.addItems(8));
+console.log(exempl.getItems())
+console.log(exempl.removeItem(12));

@@ -373,36 +373,76 @@
 //Оголоси приватні властивості #login #email,
 //доступ до яких зроби через геттер та сеттер login email
 
-class Client {
-  #login;
-  #email;
+// class Client {
+//   #login;
+//   #email;
 
-  constructor(login, email) {
-    this.#login = login;
-    this.#email = email;
-  }
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
 
-  get login() {
-    return this.#login;
-  }
+//   get login() {
+//     return this.#login;
+//   }
 
-  set login(newLogin) {
-    this.#login = newLogin;
-  }
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
 
-  get email() {
-    return this.#email;
-  }
+//   get email() {
+//     return this.#email;
+//   }
 
-  set email(newEmail) {
-    this.#email = newEmail;
-  }
-}
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
 
-const newClient = new Client("qwerty", "mail@mail.com");
+// const newClient = new Client("qwerty", "mail@mail.com");
 
-console.log(newClient.login);
-console.log((newClient.login = "newlogin"));
+// console.log(newClient.login);
+// console.log((newClient.login = "newlogin"));
 
-console.log(newClient.email);
-console.log((newClient.email = "newemail@mail.com"));
+// console.log(newClient.email);
+// console.log((newClient.email = "newemail@mail.com"));
+
+//TODO:=============================================
+// Створити клас Worker, у якого є властивості name, age, salary.
+//У класу Worker є метод getSalary.
+//Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
+//і який успадковує клас Worker, додаючи метод getHierarchyLevel
+
+// const obj = {
+//   name: "Mango",
+//   surname: "Worker",
+//   age: 30,
+//   position: "FE developer",
+//   salary: 5000,
+// };
+
+// class Worker {
+//   constructor({ name, age, salary }) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+
+//   getSalary() {
+//     return this.salary;
+//   }
+// }
+
+// class TopLevelWorker extends Worker {
+//   constructor(obj, hierarchyLevel) {
+//     super(obj);
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+
+// const newTopLvl = new TopLevelWorker(obj, "Top 1");
+// console.log(newTopLvl);

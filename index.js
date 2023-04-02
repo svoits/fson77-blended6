@@ -88,18 +88,18 @@ function onIncreaseBtnClick() {
 Додайте слухач кліку на window і визначте чи клікнув користувач у дів з id="place".
 */
 
-addEventListener("click", onPlaceBoxClick);
+// addEventListener("click", onPlaceBoxClick);
 
-function onPlaceBoxClick(e) {
-  // solution 1
-  //   if (e.target.id === "place") {
-  //     console.log(true);
-  //   } else {
-  //     console.log(false);
-  //   }
-  // solution 2
-  console.log(e.target.id === "place");
-}
+// function onPlaceBoxClick(e) {
+//   // solution 1
+//   //   if (e.target.id === "place") {
+//   //     console.log(true);
+//   //   } else {
+//   //     console.log(false);
+//   //   }
+//   // solution 2
+//   console.log(e.target.id === "place");
+// }
 
 //TODO:==============================================
 /*
@@ -108,6 +108,14 @@ function onPlaceBoxClick(e) {
 у кожному елементі списку у 2 рази
 */
 
+const doubleBtnEl = document.querySelector("#double");
+const allListItemsEl = document.querySelectorAll(".listItem");
+
+doubleBtnEl.addEventListener('click', onDoubleBtnClick);
+
+function onDoubleBtnClick(){
+  allListItemsEl.forEach(item => item.textContent = BigInt(item.textContent)**2n);
+}
 //TODO:==============================================
 /*
 Завдання 7

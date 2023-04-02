@@ -499,3 +499,43 @@ newNotes.addNote({ text: "Note 2", priority: Notes.Priopity().LOW });
 newNotes.addNote({ text: "Note 3", priority: Notes.Priopity().HIGHT });
 newNotes.removeNote("Note 3");
 newNotes.updatePriority("Note 2", Notes.Priopity().HIGHT);
+//  Створити загальний клас Animal для тварин.
+// У зоопарку повинні бути різні типи тварин, такі як ссавці, птахи, рептилії тощо.
+// Кожен тип тварин повинен мати свої властивості та методи, наприклад,
+//  методи для отримання інформації про тварину та для годівлі тварин.
+ class Animal {
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+  }
+  getInfo(){
+    return { name: this.name, age: this.age}
+  }
+  feed(){
+    console.log(`${this.name} eating `);
+  }
+ }
+
+ class myCat extends Animal {
+  constructor(name, age){
+    super(name, age);
+
+  }
+  voice(){
+    console.log(`${this.name} say mmmmay`)
+  }
+ }
+
+ class Dog extends Animal {
+  constructor(obj){
+    super(obj);
+
+  }
+  voice(){
+    console.log(`${this.name} say gav`)
+  }
+ }
+
+ const myDog = new Dog( 'Luisa', 10);
+myDog.voice();
+console.log(myDog.getInfo());

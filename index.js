@@ -44,6 +44,23 @@ function onSwapMeBtnClick(){
 і кнопка набуває початкового вигляду.
 */
 
+const hideBtnEl = document.querySelector('#passwordButton');
+const passwordInputEl = document.querySelector('#passwordInput');
+
+hideBtnEl.addEventListener('click', onHideBtnClick);
+
+function onHideBtnClick() {
+  if(hideBtnEl.textContent === "Приховати"){
+    hideBtnEl.textContent = "Розкрити";
+    passwordInputEl.type = "password";
+  } else{
+    hideBtnEl.textContent = "Приховати";
+    passwordInputEl.type = "text";
+  }
+
+}
+
+
 //TODO:==============================================
 /*
 Завдання 4

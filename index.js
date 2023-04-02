@@ -4,6 +4,16 @@
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
 */
 
+const showMeButtonEl = document.querySelector("#alertButton");
+const showMeInputEl = document.querySelector("#alertInput");
+
+showMeButtonEl.addEventListener("click", onShowMeButtonClick);
+
+function onShowMeButtonClick() {
+  alert(showMeInputEl.value);
+  showMeInputEl.value = "";
+}
+
 //TODO:==============================================
 /*
 Завдання 2

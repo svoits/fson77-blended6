@@ -21,6 +21,21 @@ function onShowMeButtonClick() {
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
+const swapMeButtonEl = document.querySelector("#swapButton");
+const swapMeFirstInputEl = document.querySelector("#leftSwapInput");
+const swapMeSecondInputEl = document.querySelector("#rightSwapInput");
+
+
+swapMeButtonEl.addEventListener("click", onSwapMeBtnClick);
+
+function onSwapMeBtnClick(){
+  const buffer = swapMeFirstInputEl.value;
+  swapMeFirstInputEl.value = swapMeSecondInputEl.value;
+  swapMeSecondInputEl.value = buffer;
+}
+
+
+
 //TODO:==============================================
 /*
 Завдання 3
